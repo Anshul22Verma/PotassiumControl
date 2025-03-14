@@ -93,7 +93,7 @@ def show_recommendations():
                             st.session_state.ratings[key] = "Fair"  # Default value
 
                         rating = st.selectbox(
-                            f"{aspect.capitalize()} ({label}):",
+                            f"{aspect.capitalize()}:",
                             ["Excellent", "Good", "Fair", "Poor", "Very Poor"],
                             index=["Excellent", "Good", "Fair", "Poor", "Very Poor"].index(st.session_state.ratings[key]),
                             key=key
@@ -103,7 +103,7 @@ def show_recommendations():
                     # Store comments in a temporary variable
                     comment_key = f"{label}_comment"
                     comment = st.text_area(
-                        f"Comments ({label}):",
+                        f"Comments:",
                         st.session_state.comments.get(comment_key, "No comments provided"),
                         key=comment_key
                     )
